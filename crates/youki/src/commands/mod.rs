@@ -24,6 +24,7 @@ pub mod spec_json;
 pub mod start;
 pub mod state;
 pub mod update;
+pub mod features;
 
 fn construct_container_root<P: AsRef<Path>>(root_path: P, container_id: &str) -> Result<PathBuf> {
     // resolves relative paths, symbolic links etc. and get complete path

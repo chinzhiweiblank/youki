@@ -13,7 +13,7 @@ use nix::libc;
 use std::fs;
 use std::path::{Path, PathBuf};
 
-use crate::commands::info;
+use crate::commands::{info, features};
 use libcontainer::rootless::rootless_required;
 use libcontainer::utils::create_dir_all_with_mode;
 use nix::sys::stat::Mode;
@@ -46,6 +46,7 @@ enum SubCommand {
 
     // Youki specific extensions
     Info(info::Info),
+    Features(features::Features),
     Completion(commands::completion::Completion),
 }
 
@@ -121,7 +122,7 @@ fn main() -> Result<()> {
             CommonCmd::Spec(spec) => commands::spec_json::spec(spec),
             CommonCmd::Update(update) => commands::update::update(update, root_path),
         },
-
+        SubCommand::Features(feature) => commands::features::features(feature),
         SubCommand::Info(info) => commands::info::info(info),
         SubCommand::Completion(completion) => {
             commands::completion::completion(completion, &mut app)

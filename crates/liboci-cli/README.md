@@ -24,3 +24,4 @@ Interface](https://github.com/opencontainers/runtime-tools/blob/master/docs/comm
 | run        | ✅         |                   | ✅   | ✅   | ✅    |
 | spec       | ✅         |                   | ✅   | ✅   | ✅    |
 | update     |            |                   | ✅   | ✅   |       |
+| features   | ✅         |                   |      |       |       |
